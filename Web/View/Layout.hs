@@ -12,7 +12,7 @@ import Web.Types
 defaultLayout :: Html -> Html
 defaultLayout inner =
   H.docTypeHtml ! A.lang "en" $
-  [hsx|
+    [hsx|
     <head>
       {metaTags}
 
@@ -26,6 +26,9 @@ defaultLayout inner =
         {renderFlashMessages}
         {inner}
       </div>
+      <footer style="margin: 1rem;">
+        <a href="https://github.com/s0kil/ihp-live-chat">Source Code</a>
+      </footer>
     </body>
   |]
 
@@ -56,9 +59,9 @@ metaTags =
   [hsx|
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta property="og:title" content="App"/>
+    <meta property="og:title" content="IHP Live Chat"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="TODO"/>
-    <meta property="og:description" content="TODO"/>
+    <meta property="og:url" content="https://ihplivechat.ihpapp.com"/>
+    <meta property="og:description" content="Super Chat"/>
     {autoRefreshMeta}
   |]

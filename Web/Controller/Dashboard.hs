@@ -7,10 +7,14 @@ import Web.View.Dashboard.NewUser
 instance Controller DashboardController where
   action DashboardAction = autoRefresh do
     userName <- getSession "userName"
+    putStrLn "HERE"
+    putStrLn $ show $ userName
     case userName of
       Nothing -> do
         redirectTo NewUserDashboardAction
-      Just _ -> do
+      Just "" -> do
+        redirectTo NewUserDashboardAction
+      Just user -> do
         rooms <- query @Room |> fetch
         events <- query @Event |> orderByDesc #createdAt |> fetch
         let selectedRoom = Nothing
@@ -45,7 +49,8 @@ instance Controller DashboardController where
           redirectTo DashboardAction
         Right room -> do
           room |> createRecord
-          createEvent $ "created room " ++ get #title room
+          Just userName <- getSession "userName"
+          createEvent $ userName ++ " created room " ++ get #title room
           redirectTo DashboardAction
   action CreateMessageDashboardAction {roomId} = do
     room <- fetch roomId

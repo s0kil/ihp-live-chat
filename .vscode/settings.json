@@ -1,3 +1,7 @@
 {
-    "nixEnvSelector.nixShellConfig": "${workspaceRoot}/default.nix"
+  "nixEnvSelector.nixFile": "${workspaceRoot}/default.nix",
+  "purple-yolk.hlint.onSave": false,
+  "purple-yolk.hlint.command": "",
+  "purple-yolk.brittany.command": "",
+  "purple-yolk.ghci.command": "ghci -package-env - -ddump-json -ignore-dot-ghci -ghci-script .ghci-purple-yolk"
 }

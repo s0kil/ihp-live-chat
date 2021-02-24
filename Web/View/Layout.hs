@@ -49,8 +49,11 @@ scripts =
     <script src="/vendor/popper.min.js"></script>
     <script src="/vendor/bootstrap.min.js"></script>
     <script src="/vendor/flatpickr.js"></script>
-    <script src="/helpers.js"></script>
     <script src="/vendor/morphdom-umd.min.js"></script>
+    <script src="/vendor/turbolinks.js"></script>
+    <script src="/vendor/turbolinksInstantClick.js"></script>
+    <script src="/vendor/turbolinksMorphdom.js"></script>
+    <script src="/helpers.js"></script>
     <script src="/ihp-auto-refresh.js"></script>
   |]
 

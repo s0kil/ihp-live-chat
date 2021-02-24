@@ -1,0 +1,5 @@
+:set -XNoImplicitPrelude
+:def source readFile
+:source build/ihp-lib/applicationGhciConfig
+import IHP.Prelude
+:l Main.hs

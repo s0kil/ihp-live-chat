@@ -1,7 +1,7 @@
 let
     ihp = builtins.fetchGit {
         url = "https://github.com/digitallyinduced/ihp.git";
-        ref = "refs/tags/v0.8.0";
+        rev = "d9128a9179dcfed3682f7c377c6811f0b0f64268";
     };
     haskellEnv = import "${ihp}/NixSupport/default.nix" {
         ihp = ihp;
@@ -14,7 +14,6 @@ let
             p.ihp
         ];
         otherDeps = p: with p; [
-            # Native dependencies, e.g. imagemagick
         ];
         projectPath = ./.;
     };
